@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .ui {
+        padding: 2%;
+        display: flex;
+        font-size: larger;
+        align-items: center;
+        justify-content: right;
+        background: linear-gradient(
+          90deg,
+          rgba(25, 138, 235, 1) 4%,
+          rgba(103, 215, 254, 1) 57%,
+          rgba(192, 235, 240, 1) 100%
+        );
+        color: rgb(253, 10, 10);
+        font-size: 1x;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+      }
+
+      li {
+        margin-right: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #000000;
+      }
+
+      .main {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(
+          90deg,
+          rgba(25, 138, 235, 1) 4%,
+          rgba(103, 215, 254, 1) 57%,
+          rgba(192, 235, 240, 1) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .title {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 75px;
+        text-align: center;
+      }
+      .sub {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 17%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      #mainPic {
+        position: absolute;
+        width: 50%;
+        top: 60%;
+        left: 50%;
+        transform: translate(0%, -50%);
+      }
+      #picture {
+        position: absolute;
+        width: 20%;
+        border-radius: 50%;
+        left: 5%;
+        bottom: 50%;
+        border: 3px rgb(122, 122, 122) solid;
+      }
+      .columns {
+        position: absolute;
+        left: 2%;
+        bottom: 22%;
+        width: 50%;
+        height: 22%;
+        background-color: transparent;
+        column-rule: 3px solid #ffffff;
+        column-count: 2;
+        column-gap: 61px;
+        text-align: justify;
+        color: #ffffff;
+        font-size: 17px;
+      }
+      #project .project-title,
+      #project .project-sub,
+      #project .preLim {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 15px;
+      }
+      #project .project-title {
+        font-size: 400%;
+      }
+      #project .preLim {
+        position: absolute;
+        font-size: 200%;
+        top: 12%;
+        right: 50%;
+        transform: translate(50%);
+        color: rgb(19, 77, 42);
+      }
+      #project .project-sub {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        top: 6%;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .project {
+        position: relative;
+        width: 100%;
+        height: 200vh;
+        background-color: rgb(230, 230, 230);
+        font-weight: 100;
+      }
+      .project1 {
+        background-color: rgb(230, 230, 230);
+        display: flex;
+        top: 16%;
+        right: 20%;
+        width: 60%;
+        height: 25%;
+        border-radius: 10px;
+        box-shadow: 5px 10px 20px rgb(158, 158, 158);
+        position: absolute;
+        left: 5%;
+      }
+      .project1:hover {
+        background-color: rgb(200, 200, 200);
+        transition: 0.5s;
+      }
+      .project1 .ikigai-title {
+        position: absolute;
+        top: 5%;
+        left: 60%;
+        font-weight: 900;
+      }
+      .project1 .ikigai {
+        position: absolute;
+        display: flex;
+        top: 10%;
+        left: 6%;
+        width: 30%;
+      }
+      .project1 .ikigai:hover {
+        top: 6%;
+        left: 4%;
+        width: 33%;
+        border-radius: 40px;
+        border: 3px black solid;
+        transition: 0.5s;
+      }
+      #project .ikigai_ref {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: arial;
+        top: 35%;
+        width: 470px;
+        right: 5%;
+      }
+
+      .project2 {
+        background-color: rgb(230, 230, 230);
+        position: absolute;
+        display: flex;
+        width: 60%;
+        height: 25%;
+        border-radius: 10px;
+        box-shadow: 5px 10px 20px rgb(158, 158, 158);
+        position: absolute;
+        right: 5%;
+        top: 45%;
+      }
+      .project2:hover {
+        background-color: rgb(200, 200, 200);
+        transition: 0.5s;
+      }
+      .project2 h1.window-title {
+        position: absolute;
+        display: flex;
+        top: 10%;
+        left: 55%;
+      }
+      .project2 .window {
+        position: absolute;
+        display: flex;
+        top: 15%;
+        left: 7%;
+        width: 30%;
+      }
+      .project2 .window:hover {
+        top: 12%;
+        left: 6%;
+        width: 33%;
+        border-radius: 40px;
+        border: 3px black solid;
+        transition: 0.5s;
+      }
+      #project .window-ref {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: arial;
+        top: 35%;
+        width: 470px;
+        right: 5%;
+      }
+
+      /* midterm */
+      .midTermTitle {
+        position: absolute;
+        top: 76%;
+        left: 50%;
+        transform: translate(-50%);
+        color: rgb(19, 77, 42);
+      }
+      .project3 {
+        background-color: rgb(230, 230, 230);
+        display: flex;
+        top: 80%;
+        right: 20%;
+        width: 60%;
+        height: 25%;
+        border-radius: 10px;
+        box-shadow: 5px 10px 20px rgb(158, 158, 158);
+        position: absolute;
+        left: 5%;
+      }
+      .project3:hover {
+        background-color: rgb(200, 200, 200);
+        transition: 0.5s;
+      }
+      .project3 h1.riasecTitle {
+        position: absolute;
+        display: flex;
+        top: 10%;
+        left: 55%;
+      }
+      .project3 .riasec {
+        position: absolute;
+        display: flex;
+        top: 15%;
+        left: 15%;
+        width: 13%;
+      }
+      .project3 .riasec-ref {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: arial;
+        top: 35%;
+        width: 470px;
+        right: 10%;
+      }
+
+      /* Media query for smaller screens */
+      @media screen and (max-width: 450px) {
+        .ui {
+          font-size: medium;
+          color: rgb(253, 10, 10);
+        }
+        .title {
+          top: 25%;
+          font-size: 40px;
+        }
+        .sub {
+          top: 33%;
+          left: 50%;
+          color: white;
+          font-size: 15px;
+        }
+        #mainPic {
+          width: 80%;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+        #picture {
+          width: 25%;
+          border-radius: 50%;
+          left: 50%;
+          top: 2%;
+          transform: translate(-50%);
+          border: 3px rgb(122, 122, 122) solid;
+        }
+        .columns {
+          left: 3%;
+          top: 43%;
+          width: 90%;
+          height: 21.5%;
+          column-gap: 50px;
+          font-size: 80%;
+        }
+        #project .project-title,
+        #project .project-sub,
+        #project .preLim {
+          top: 10px;
+        }
+        #project .project-title {
+          font-size: 250%;
+        }
+        #project .preLim {
+          position: absolute;
+          font-size: 150%;
+          top: 6%;
+          right: 50%;
+          transform: translate(50%);
+          color: rgb(19, 77, 42);
+        }
+        #project .project-sub {
+          display: none;
+        }
+        .project1 {
+          top: 8%;
+          width: 70%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+        .project1 .ikigai-title {
+          text-align: center;
+          top: 2%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+        .project1 .ikigai {
+          top: 15%;
+          left: 50%;
+          transform: translate(-50%);
+          width: 45%;
+          border: 2px black solid;
+          border-radius: 10%;
+        }
+        .project1 .ikigai:hover {
+          display: none;
+        }
+        #project .ikigai_ref {
+          text-align: justify;
+          height: 30%;
+          top: 65%;
+          left: 5%;
+          width: 90%;
+          font-size: 80%;
+        }
+        .project2 {
+          top: 40%;
+          width: 70%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+        .project2 h1.window-title {
+          text-align: center;
+          top: 1%;
+          left: 50%;
+          transform: translate(-50%);
+          font-weight: 800;
+        }
+        .project2 .window {
+          top: 21%;
+          left: 50%;
+          transform: translate(-50%);
+          width: 45%;
+          border: 2px black solid;
+          border-radius: 10%;
+        }
+        .project2 .window:hover {
+          display: none;
+        }
+        #project .window-ref {
+          text-align: justify;
+          height: 30%;
+          top: 65%;
+          left: 5%;
+          width: 90%;
+          font-size: 80%;
+        }
+
+        .midTermTitle {
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%);
+          color: rgb(19, 77, 42);
+        }
+        .project3 {
+          top: 75%;
+          width: 70%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+        .project3 h1.riasecTitle {
+          text-align: center;
+          top: 1%;
+          left: 50%;
+          transform: translate(-50%);
+          font-weight: 800;
+        }
+        .project3 .riasec {
+          position: absolute;
+          display: flex;
+          top: 25%;
+          left: 50%;
+          transform: translate(-50%);
+          width: 15%;
+        }
+        .project3 .riasec-ref {
+          text-align: justify;
+          height: 30%;
+          top: 65%;
+          left: 5%;
+          width: 90%;
+          font-size: 80%;
+        }
+      }
+    </style>
+    <title>Personal Inhancement</title>
+  </head>
+  <body>
+    <div class="ui">
+      <ul>
+        <li><a href="#" id="home-link">Home</a></li>
+        <li><a href="#" id="Project-link">Project</a></li>
+        <li><a href="#" id="Contact-link">Contact</a></li>
+        <li><a href="#" id="FB-Account-link">FB Account</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="columns">
+        <table>
+          <tr>
+            <td>
+              The importance of self-improvement lies in its ability to enrich
+              every aspect of life. Whether it's achieving personal goals,
+              advancing in one's career, or nurturing meaningful relationships,
+              continuous self-improvement is the key to unlocking one's full
+              potential and living a fulfilling and purposeful life.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Personal enhancement or self-improvement, refers to the process of
+              taking deliberate actions to enhance various aspects of oneself.
+              This can include developing new skills, improving existing
+              abilities, fostering positive habits, cultivating emotional
+              intelligence, expanding knowledge, setting and achieving goals,
+              and enhancing overall well-being.
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h1 class="title">Personal Enhancement</h1>
+      <p class="sub">My Project, Task, and etc</p>
+      <img
+        src="/img/e-learning-icons-flat-vector.jpg"
+        alt="picture"
+        id="picture" />
+      <img
+        src="/img/image-removebg-preview.png"
+        alt="main-picture"
+        id="mainPic" />
+    </div>
+
+    <div class="project" id="project">
+      <h1 class="project-title">My Projects</h1>
+      <h2 class="preLim">PRE LIM</h2>
+      <p class="project-sub">
+        In this part you'll see some of my project and what I've learned
+      </p>
+      <div class="project1">
+        <h1 class="ikigai-title">MY IKIGAI</h1>
+        <p class="ikigai_ref">
+          So, what I picked up from this lesson is basically seeing how awesome
+          I am! It's all about finding my "IKIGAI" and I know myself better than
+          anyone else. Only I can truly figure out what I want to do and what
+          I'm good at. It's kind of surprising, but it turns out that what I've
+          been doing led to some pretty cool outcomes.
+        </p>
+        <img src="img/ikigai.png" class="ikigai" />
+      </div>
+
+      <div class="project2">
+        <h1 class="window-title">MY JOARI WINDOW</h1>
+        <p class="window-ref">
+          Looking back on this, I gotta say, I didn't really learn much except
+          that I know myself better than anyone else does. It's kinda wild
+          though, hardly anyone in my class seems to know me at all. Makes me
+          wonder why that is, you know? That's probably why I always put up a
+          front in class. But hey, at least it's kinda nice flying under the
+          radar and being a bit of a mystery to everyone else.
+        </p>
+        <img src="img/joariWindow.png" class="window" />
+      </div>
+
+      <h1 class="midTermTitle">MID TERM</h1>
+      <div class="project3">
+        <h1 class="riasecTitle">MY RIASEC</h1>
+        <p class="riasec-ref">
+          My RIASEC scores show I am mainly Investigative and Conventional, with
+          a bit of Artistic. This means I like figuring things out and keeping
+          things in order. I also have a creative side. Jobs where I can analyze
+          data, organize information, and maybe add a creative touch could be
+          good for me. It is not just about finding the right job, it is about
+          knowing what I am good at and what I enjoy.
+        </p>
+        <img src="img/riasec.jpg" class="riasec" />
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
