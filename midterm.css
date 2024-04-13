@@ -98,12 +98,13 @@
         position: absolute;
         display: flex;
         top: 10%;
-        left: 55%;
+        left: 50%;
+        transform: translate(-50%);
     }
     .project3 .riasec {
         position: absolute;
         display: flex;
-        top: 20%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%);
         width: 25%;
