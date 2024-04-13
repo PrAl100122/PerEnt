@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ui {
+    padding: 2%;
+    display: flex;
+    font-size: larger;
+    align-items: center;
+    justify-content: right;
+    background: linear-gradient(90deg, rgba(25, 138, 235, 1) 4%, rgba(103, 215, 254, 1) 57%, rgba(192, 235, 240, 1) 100%);
+    color: rgb(253, 10, 10);
+    font-size: 1x;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #000000;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(25, 138, 235, 1) 4%, rgba(103, 215, 254, 1) 57%, rgba(192, 235, 240, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 75px;
+    text-align:center;
+}
+.sub {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    text-align:center;
+}
+
+#mainPic {
+    position: absolute;
+    width: 50%;
+    top: 60%;
+    left: 50%;
+    transform: translate(0%, -50%);
+}
+#picture {
+    position: absolute;
+    width: 20%;
+    border-radius: 50%;
+    left: 5%;
+    bottom: 50%;
+    border: 3px rgb(122, 122, 122) solid;
+}
+.columns {
+    position: absolute;
+    left: 2%;
+    bottom: 22%;
+    width: 50%;
+    height: 22%;
+    background-color: transparent;
+    column-rule: 3px solid #ffffff;
+    column-count: 2;
+    column-gap: 61px;
+    text-align: justify;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 430px) {
+    .ui {
+        font-size: medium;
+        color: rgb(253, 10, 10);
+    }
+    .main {
+        width: 100%;
+        height: auto;
+    }
+    .title {
+        top: 25%;
+        font-size: 40px;
+    }
+    .sub {
+        top: 33%;
+        left: 50%;
+        color: white;
+        font-size: 15px;
+    }
+    #mainPic {
+        width: 80%;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    #picture {
+        width: 25%;
+        border-radius: 50%;
+        left: 50%;
+        top: 2%;
+        transform: translate(-50%);
+        border: 3px rgb(122, 122, 122) solid;
+    }
+    .columns {
+        left: 3%;
+        top: 43%;
+        width: 90%;
+        height: 21.5%;
+        column-gap: 50px;
+        font-size: 80%;
+    }
+}

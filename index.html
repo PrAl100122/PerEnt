@@ -3,457 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      }
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/project.css" />
+    <link rel="stylesheet" href="/midterm.css" />
 
-      .ui {
-        padding: 2%;
-        display: flex;
-        font-size: larger;
-        align-items: center;
-        justify-content: right;
-        background: linear-gradient(
-          90deg,
-          rgba(25, 138, 235, 1) 4%,
-          rgba(103, 215, 254, 1) 57%,
-          rgba(192, 235, 240, 1) 100%
-        );
-        color: rgb(253, 10, 10);
-        font-size: 1x;
-      }
-
-      ul {
-        list-style: none;
-        display: flex;
-      }
-
-      li {
-        margin-right: 20px;
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      a:hover {
-        color: #000000;
-      }
-
-      .main {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        background: linear-gradient(
-          90deg,
-          rgba(25, 138, 235, 1) 4%,
-          rgba(103, 215, 254, 1) 57%,
-          rgba(192, 235, 240, 1) 100%
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .title {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 75px;
-        text-align: center;
-      }
-      .sub {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 17%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 30px;
-        text-align: center;
-      }
-
-      #mainPic {
-        position: absolute;
-        width: 50%;
-        top: 60%;
-        left: 50%;
-        transform: translate(0%, -50%);
-      }
-      #picture {
-        position: absolute;
-        width: 20%;
-        border-radius: 50%;
-        left: 5%;
-        bottom: 50%;
-        border: 3px rgb(122, 122, 122) solid;
-      }
-      .columns {
-        position: absolute;
-        left: 2%;
-        bottom: 22%;
-        width: 50%;
-        height: 22%;
-        background-color: transparent;
-        column-rule: 3px solid #ffffff;
-        column-count: 2;
-        column-gap: 61px;
-        text-align: justify;
-        color: #ffffff;
-        font-size: 17px;
-      }
-      #project .project-title,
-      #project .project-sub,
-      #project .preLim {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        top: 15px;
-      }
-      #project .project-title {
-        font-size: 400%;
-      }
-      #project .preLim {
-        position: absolute;
-        font-size: 200%;
-        top: 12%;
-        right: 50%;
-        transform: translate(50%);
-        color: rgb(19, 77, 42);
-      }
-      #project .project-sub {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        top: 6%;
-        left: 50%;
-        transform: translate(-50%);
-      }
-      .project {
-        position: relative;
-        width: 100%;
-        height: 200vh;
-        background-color: rgb(230, 230, 230);
-        font-weight: 100;
-      }
-      .project1 {
-        background-color: rgb(230, 230, 230);
-        display: flex;
-        top: 16%;
-        right: 20%;
-        width: 60%;
-        height: 25%;
-        border-radius: 10px;
-        box-shadow: 5px 10px 20px rgb(158, 158, 158);
-        position: absolute;
-        left: 5%;
-      }
-      .project1:hover {
-        background-color: rgb(200, 200, 200);
-        transition: 0.5s;
-      }
-      .project1 .ikigai-title {
-        position: absolute;
-        top: 5%;
-        left: 60%;
-        font-weight: 900;
-      }
-      .project1 .ikigai {
-        position: absolute;
-        display: flex;
-        top: 10%;
-        left: 6%;
-        width: 30%;
-      }
-      .project1 .ikigai:hover {
-        top: 6%;
-        left: 4%;
-        width: 33%;
-        border-radius: 40px;
-        border: 3px black solid;
-        transition: 0.5s;
-      }
-      #project .ikigai_ref {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-style: arial;
-        top: 35%;
-        width: 470px;
-        right: 5%;
-      }
-
-      .project2 {
-        background-color: rgb(230, 230, 230);
-        position: absolute;
-        display: flex;
-        width: 60%;
-        height: 25%;
-        border-radius: 10px;
-        box-shadow: 5px 10px 20px rgb(158, 158, 158);
-        position: absolute;
-        right: 5%;
-        top: 45%;
-      }
-      .project2:hover {
-        background-color: rgb(200, 200, 200);
-        transition: 0.5s;
-      }
-      .project2 h1.window-title {
-        position: absolute;
-        display: flex;
-        top: 10%;
-        left: 55%;
-      }
-      .project2 .window {
-        position: absolute;
-        display: flex;
-        top: 15%;
-        left: 7%;
-        width: 30%;
-      }
-      .project2 .window:hover {
-        top: 12%;
-        left: 6%;
-        width: 33%;
-        border-radius: 40px;
-        border: 3px black solid;
-        transition: 0.5s;
-      }
-      #project .window-ref {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-style: arial;
-        top: 35%;
-        width: 470px;
-        right: 5%;
-      }
-
-      /* midterm */
-      .midTermTitle {
-        position: absolute;
-        top: 76%;
-        left: 50%;
-        transform: translate(-50%);
-        color: rgb(19, 77, 42);
-      }
-      .project3 {
-        background-color: rgb(230, 230, 230);
-        display: flex;
-        top: 80%;
-        right: 20%;
-        width: 60%;
-        height: 25%;
-        border-radius: 10px;
-        box-shadow: 5px 10px 20px rgb(158, 158, 158);
-        position: absolute;
-        left: 5%;
-      }
-      .project3:hover {
-        background-color: rgb(200, 200, 200);
-        transition: 0.5s;
-      }
-      .project3 h1.riasecTitle {
-        position: absolute;
-        display: flex;
-        top: 10%;
-        left: 55%;
-      }
-      .project3 .riasec {
-        position: absolute;
-        display: flex;
-        top: 15%;
-        left: 15%;
-        width: 13%;
-      }
-      .project3 .riasec-ref {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-style: arial;
-        top: 35%;
-        width: 470px;
-        right: 10%;
-      }
-
-      /* Media query for smaller screens */
-      @media screen and (max-width: 400px) {
-        .ui {
-          font-size: medium;
-          color: rgb(253, 10, 10);
-        }
-        .title {
-          top: 25%;
-          font-size: 40px;
-        }
-        .sub {
-          top: 33%;
-          left: 50%;
-          color: white;
-          font-size: 15px;
-        }
-        #mainPic {
-          width: 80%;
-          top: 70%;
-          left: 50%;
-          transform: translate(-50%);
-        }
-        #picture {
-          width: 25%;
-          border-radius: 50%;
-          left: 50%;
-          top: 2%;
-          transform: translate(-50%);
-          border: 3px rgb(122, 122, 122) solid;
-        }
-        .columns {
-          left: 3%;
-          top: 43%;
-          width: 90%;
-          height: 21.5%;
-          column-gap: 50px;
-          font-size: 80%;
-        }
-        #project .project-title,
-        #project .project-sub,
-        #project .preLim {
-          top: 10px;
-        }
-        #project .project-title {
-          font-size: 250%;
-        }
-        #project .preLim {
-          position: absolute;
-          font-size: 150%;
-          top: 6%;
-          right: 50%;
-          transform: translate(50%);
-          color: rgb(19, 77, 42);
-        }
-        #project .project-sub {
-          display: none;
-        }
-        .project1 {
-          top: 8%;
-          width: 70%;
-          left: 50%;
-          transform: translate(-50%);
-        }
-        .project1 .ikigai-title {
-          text-align: center;
-          top: 2%;
-          left: 50%;
-          transform: translate(-50%);
-        }
-        .project1 .ikigai {
-          top: 15%;
-          left: 50%;
-          transform: translate(-50%);
-          width: 45%;
-          border: 2px black solid;
-          border-radius: 10%;
-        }
-        .project1 .ikigai:hover {
-          display: none;
-        }
-        #project .ikigai_ref {
-          text-align: justify;
-          height: 30%;
-          top: 65%;
-          left: 5%;
-          width: 90%;
-          font-size: 80%;
-        }
-        .project2 {
-          top: 40%;
-          width: 70%;
-          left: 50%;
-          transform: translate(-50%);
-        }
-        .project2 h1.window-title {
-          text-align: center;
-          top: 1%;
-          left: 50%;
-          transform: translate(-50%);
-          font-weight: 800;
-        }
-        .project2 .window {
-          top: 21%;
-          left: 50%;
-          transform: translate(-50%);
-          width: 45%;
-          border: 2px black solid;
-          border-radius: 10%;
-        }
-        .project2 .window:hover {
-          display: none;
-        }
-        #project .window-ref {
-          text-align: justify;
-          height: 30%;
-          top: 65%;
-          left: 5%;
-          width: 90%;
-          font-size: 80%;
-        }
-
-        .midTermTitle {
-          position: absolute;
-          top: 70%;
-          left: 50%;
-          transform: translate(-50%);
-          color: rgb(19, 77, 42);
-        }
-        .project3 {
-          top: 75%;
-          width: 70%;
-          left: 50%;
-          transform: translate(-50%);
-        }
-        .project3 h1.riasecTitle {
-          text-align: center;
-          top: 1%;
-          left: 50%;
-          transform: translate(-50%);
-          font-weight: 800;
-        }
-        .project3 .riasec {
-          position: absolute;
-          display: flex;
-          top: 25%;
-          left: 50%;
-          transform: translate(-50%);
-          width: 15%;
-        }
-        .project3 .riasec-ref {
-          text-align: justify;
-          height: 30%;
-          top: 65%;
-          left: 5%;
-          width: 90%;
-          font-size: 80%;
-        }
-      }
-    </style>
+    <!-- media -->
+    <!-- <link rel="stylesheet" href="media.css" /> -->
     <title>Personal Inhancement</title>
   </head>
   <body>
@@ -492,14 +47,8 @@
       </div>
       <h1 class="title">Personal Enhancement</h1>
       <p class="sub">My Project, Task, and etc</p>
-      <img
-        src="/img/e-learning-icons-flat-vector.jpg"
-        alt="picture"
-        id="picture" />
-      <img
-        src="/img/image-removebg-preview.png"
-        alt="main-picture"
-        id="mainPic" />
+      <img src="/img/image2.jpg" alt="picture" id="picture" />
+      <img src="/img/image1.png" alt="main-picture" id="mainPic" />
     </div>
 
     <div class="project" id="project">
@@ -533,18 +82,60 @@
         <img src="img/joariWindow.png" class="window" />
       </div>
 
-      <h1 class="midTermTitle">MID TERM</h1>
-      <div class="project3">
-        <h1 class="riasecTitle">MY RIASEC</h1>
-        <p class="riasec-ref">
-          My RIASEC scores show I am mainly Investigative and Conventional, with
-          a bit of Artistic. This means I like figuring things out and keeping
-          things in order. I also have a creative side. Jobs where I can analyze
-          data, organize information, and maybe add a creative touch could be
-          good for me. It is not just about finding the right job, it is about
-          knowing what I am good at and what I enjoy.
-        </p>
-        <img src="img/riasec.jpg" class="riasec" />
+      <div class="MIDTERM">
+        <h1 class="midTermTitle">MID TERM</h1>
+        <div class="project3">
+          <h1 class="riasecTitle">MY RIASEC</h1>
+          <p class="riasec-ref">
+            My RIASEC scores show I am mainly Investigative and Conventional,
+            with a bit of Artistic. This means I like figuring things out and
+            keeping things in order. I also have a creative side. Jobs where I
+            can analyze data, organize information, and maybe add a creative
+            touch could be good for me. It is not just about finding the right
+            job, it is about knowing what I am good at and what I enjoy.
+          </p>
+          <img src="img/riasec.jpg" class="riasec" />
+        </div>
+        <div class="project4">
+          <h1 class="w-title">WHO AM I</h1>
+          <p class="paragraph1">
+            When I was a child, I was like a blank canvas, full of potential. I
+            was eager to learn and experience new things. I was growing
+            physically, just like a young tree grows towards the sun. I was
+            always curious, exploring my surroundings and soaking up everything
+            like a sponge. I was fascinated by every shape and color, and they
+            all contributed to my understanding of the world. I had a wild
+            imagination, where mythical creatures like dragons were as real to
+            me as the ground I walked on. I had big dreams, one of which was to
+            become the most skilled ethical hacker ever known. I was just
+            starting to learn how to interact with others, like a young bird
+            learning to fly. I felt a deep connection to the universe, finding
+            magic and wonder in the most ordinary things.
+          </p>
+          <p class="paragraph2">
+            As I grew older, I went through many changes. My body adapted to
+            these changes, just like a ship navigating through changing tides. I
+            held onto my dream of becoming a great hacker, using it as a beacon
+            to guide me. I became a seeker of truth, questioning everything
+            around me with a burning curiosity. I experienced a whirlwind of
+            emotions, learning to find peace within myself amidst the chaos. I
+            made friends along the way, each one adding a unique piece to the
+            mosaic of my identity.
+          </p>
+          <p class="paragraph3">
+            Now, as an adult, I see myself as a blend of all these experiences.
+            Physically, I carry the marks of my journey, each scar and smile
+            telling a part of my story. I strive to be a source of wisdom,
+            sharing my knowledge freely with those who seek it. I aim to be
+            resilient, facing life is challenges with grace. I hope to build
+            bridges of understanding and compassion between people. I aspire to
+            be a beacon of light, guiding not only my own path but also helping
+            others find their way. I believe that every experience, good or bad,
+            is a part of my journey and adds to my story. I look forward to
+            continuing this journey, learning, growing, and hopefully making a
+            positive impact on the world.
+          </p>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>
